@@ -7,7 +7,7 @@ import { MoviesList, MovieLink, MovieItem } from './ListTrendingFilms.styled';
 export default function ListTrendingFilms() {
   const [listFilms, setListFilms] = useState([]);
   const [loader, setLoader] = useState(false);
-  const firstRender = useRef(false);
+  const firstRender = useRef(true);
   const location = useLocation();
 
   useEffect(() => {
