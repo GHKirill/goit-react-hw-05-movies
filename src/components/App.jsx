@@ -1,16 +1,24 @@
+import { Route, Routes } from 'react-router-dom';
+import SharedLayout from './SharedLayout/SharedLayout';
+import HomePage from './Pages/HomePage';
+import MoviesSearchPage from './Pages/MoviesSearchPage';
+import MovieDetails from './MovieDetails/MovieDetails';
+import MovieCastList from './MovieCastList/MovieCastList';
+import MovieReviews from './MovieReviews/MovieReviews';
+import NotFoundPage from './Pages/NotFoundPage';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="movies" element={<MoviesSearchPage />} />
+        <Route path="movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<MovieCastList />} />
+          <Route path="reviews" element={<MovieReviews />} />
+        </Route>
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };
