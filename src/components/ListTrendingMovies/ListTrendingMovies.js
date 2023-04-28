@@ -28,6 +28,7 @@ export default function ListTrendingMovies() {
       //   console.log(error);
       // }
       setLoader(true);
+      console.log('probe');
       const fetchGetMoviesListTrend = async () => {
         const response = await axios.get(`trending/movie/day?api_key=${KEY}`);
         const result = response.data.results;
