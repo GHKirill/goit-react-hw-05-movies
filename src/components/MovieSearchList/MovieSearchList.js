@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
-import { fetchGetMoviesListQuery } from 'components/API/fetches';
+//import { fetchGetMoviesListQuery } from 'components/API/fetches';
+import { fetchGetMoviesListQuery } from '../API/fetches';
 import { MoviesList, MovieLink, MovieItem } from './MovieSearchList.styled';
 
 export default function MovieSearchList({ query }) {
