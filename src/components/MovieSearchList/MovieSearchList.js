@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 //import { fetchGetMoviesListQuery } from 'components/API/fetches';
@@ -8,14 +8,14 @@ import { MoviesList, MovieLink, MovieItem } from './MovieSearchList.styled';
 export default function MovieSearchList({ query }) {
   const [movieList, setMovieList] = useState([]);
   const [loader, setLoader] = useState(false);
-  const firstRender = useRef(true);
+  //const firstRender = useRef(true);
   const location = useLocation();
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // if (firstRender.current) {
+    //   firstRender.current = false;
+    //   return;
+    // }
     const getQuery = async () => {
       setLoader(true);
       fetchGetMoviesListQuery(setMovieList, query, setLoader);
