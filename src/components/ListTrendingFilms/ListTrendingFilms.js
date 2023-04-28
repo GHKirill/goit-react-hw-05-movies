@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 import { fetchGetMoviesListTrend } from 'components/API/fetches';
@@ -7,14 +7,14 @@ import { MoviesList, MovieLink, MovieItem } from './ListTrendingFilms.styled';
 export default function ListTrendingFilms() {
   const [listFilms, setListFilms] = useState([]);
   const [loader, setLoader] = useState(false);
-  // const firstRender = useRef(true);
+  const firstRender = useRef(true);
   const location = useLocation();
 
   useEffect(() => {
-    // if (firstRender.current) {
-    //   firstRender.current = false;
-    //   return;
-    // }
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
     const getQuery = async function () {
       try {
         setLoader(true);
@@ -25,7 +25,6 @@ export default function ListTrendingFilms() {
     };
     getQuery();
   }, []);
-  setLoader(true);
   return (
     <>
       <h2>Trending today</h2>
