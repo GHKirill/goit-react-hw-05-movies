@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 import { fetchGetMovieReviews } from 'components/API/fetches';
@@ -12,13 +12,13 @@ export default function MovieReviews() {
   const [moviesReviews, setMoviesReviews] = useState([]);
   const [loader, setLoader] = useState(false);
   const { movieId } = useParams();
-  const firstRender = useRef(true);
+  //const firstRender = useRef(true);
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // if (firstRender.current) {
+    //   firstRender.current = false;
+    //   return;
+    // }
     const fetchMoviesReviews = async () => {
       setLoader(true);
       fetchGetMovieReviews(setMoviesReviews, movieId, setLoader);

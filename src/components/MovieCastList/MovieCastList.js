@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchGetMovieCastList } from 'components/API/fetches';
 import { RotatingLines } from 'react-loader-spinner';
@@ -15,13 +15,13 @@ export default function MovieCastLis() {
   const { movieId } = useParams();
   const [castList, setCastList] = useState([]);
   const [loader, setLoader] = useState(false);
-  const firstRender = useRef(true);
+  //const firstRender = useRef(true);
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // if (firstRender.current) {
+    //   firstRender.current = false;
+    //   return;
+    // }
     const getQuery = async () => {
       setLoader(true);
       fetchGetMovieCastList(setCastList, movieId, setLoader);
