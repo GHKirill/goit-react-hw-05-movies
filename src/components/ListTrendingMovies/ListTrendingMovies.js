@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 import axios from 'axios';
@@ -12,14 +12,14 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 export default function ListTrendingMovies() {
   const [listFilms, setListFilms] = useState([]);
   const [loader, setLoader] = useState(false);
-  const firstRender = useRef(true);
+  //const firstRender = useRef(true);
   const location = useLocation();
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // if (firstRender.current) {
+    //   firstRender.current = false;
+    //   return;
+    //}
     const getQuery = async function () {
       // try {
       //   setLoader(true);
