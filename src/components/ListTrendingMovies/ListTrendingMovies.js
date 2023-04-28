@@ -2,9 +2,9 @@ import { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 import { fetchGetMoviesListTrend } from 'components/API/fetches';
-import { MoviesList, MovieLink, MovieItem } from './ListTrendingFilms.styled';
+import { MoviesList, MovieLink, MovieItem } from './ListTrendingMovies.styled';
 
-export default function ListTrendingFilms() {
+export default function ListTrendingMovies() {
   const [listFilms, setListFilms] = useState([]);
   const [loader, setLoader] = useState(false);
   const firstRender = useRef(true);

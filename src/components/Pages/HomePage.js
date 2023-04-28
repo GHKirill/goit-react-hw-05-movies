@@ -1,4 +1,4 @@
-import ListTrendingFilms from '../ListTrendingFilms/ListTrendingFilms';
+import ListTrendingFilms from '../ListTrendingMovies/ListTrendingMovies';
 // import axios from 'axios';
 // const KEY = '7fbdf6cf40f68e209048a77188ae45b3';
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
