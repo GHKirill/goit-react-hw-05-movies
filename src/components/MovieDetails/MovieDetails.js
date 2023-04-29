@@ -1,5 +1,5 @@
 import { Outlet, useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 // import { fetchGetMovieDetails } from 'components/API/fetches';
 import { fetchGetMovieDetails } from '../API/fetches';
 import { getGenres } from '../API/getMovieInfo';
@@ -87,8 +87,22 @@ export default function MovieDetails() {
         <ButtonLink to="cast">Cast</ButtonLink>
         <ButtonLink to="reviews">Reviews</ButtonLink>
       </ButtonLinkWrapper>
-
-      <Outlet />
+      <Suspense
+        fallback={
+          <>
+            <RotatingLines
+              strokeColor="orange"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="96"
+              visible={true}
+            />
+            <span> is loading...</span>
+          </>
+        }
+      >
+        <Outlet />
+      </Suspense>
     </>
   );
 }
