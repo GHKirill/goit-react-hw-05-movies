@@ -27,6 +27,7 @@ export default function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState({});
   const [loader, setLoader] = useState(false);
   //const firstRender = useRef(true);
+  // lllllll
   const linkToStart = useRef(null);
   if (location?.state?.from) {
     linkToStart.current = location.state.from;
