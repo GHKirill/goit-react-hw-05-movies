@@ -37,6 +37,7 @@ export default function MovieDetails() {
     //   firstRender.current = false;
     //   return;
     // }
+    console.log('probe');
     const getQuery = async function () {
       try {
         setLoader(true);
