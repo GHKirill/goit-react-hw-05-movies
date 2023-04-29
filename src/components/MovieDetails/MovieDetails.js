@@ -26,18 +26,11 @@ export default function MovieDetails() {
   const location = useLocation();
   const [movieDetails, setMovieDetails] = useState({});
   const [loader, setLoader] = useState(false);
-  //const firstRender = useRef(true);
-  // lllllll
   const linkToStart = useRef(null);
   if (location?.state?.from) {
     linkToStart.current = location.state.from;
   }
   useEffect(() => {
-    // if (firstRender.current) {
-    //   firstRender.current = false;
-    //   return;
-    // }
-    console.log('probe');
     const getQuery = async function () {
       try {
         setLoader(true);

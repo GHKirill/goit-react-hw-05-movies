@@ -15,13 +15,8 @@ export default function MovieCastLis() {
   const { movieId } = useParams();
   const [castList, setCastList] = useState([]);
   const [loader, setLoader] = useState(false);
-  //const firstRender = useRef(true);
 
   useEffect(() => {
-    // if (firstRender.current) {
-    //   firstRender.current = false;
-    //   return;
-    // }
     const getQuery = async () => {
       setLoader(true);
       fetchGetMovieCastList(setCastList, movieId, setLoader);

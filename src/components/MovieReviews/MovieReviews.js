@@ -12,13 +12,8 @@ export default function MovieReviews() {
   const [moviesReviews, setMoviesReviews] = useState([]);
   const [loader, setLoader] = useState(false);
   const { movieId } = useParams();
-  //const firstRender = useRef(true);
 
   useEffect(() => {
-    // if (firstRender.current) {
-    //   firstRender.current = false;
-    //   return;
-    // }
     const fetchMoviesReviews = async () => {
       setLoader(true);
       fetchGetMovieReviews(setMoviesReviews, movieId, setLoader);
